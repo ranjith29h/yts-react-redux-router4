@@ -1,0 +1,81 @@
+.card-container{
+    margin-bottom: 2%;
+}
+.card-item{
+    cursor: pointer;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    border:none !important;
+    border-radius: 0 !important;
+}
+.card-item img{
+    border-top-right-radius:0;
+    border-top-left-radius:0;
+}
+.film-title{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.movie-details > * {
+    margin: auto !important;
+}
+.movie-details p{
+    border: 1px solid #3F51B5;
+    color: #3F51B5;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+.movie-details h6{
+    margin-bottom: 2px;
+}
+.movie-details .col-md-9{
+    margin-top: 0px !important;
+}
+.movie-details-container{
+    padding: 20px 10px 5px 15px !important;
+}
+.text-bold{
+    font-weight: 500;
+}
+.text-muted{
+    padding: 1% 4% 2% 4%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: #E0E0E0;
+    color: #616161;
+    border-radius: 5px;
+}
+hr{
+    margin-top: 1% !important;
+    margin-bottom: 2% !important;
+}
+.genr-item{
+    padding-bottom: 10px;
+}
+
+.yts-item-link:link    {
+    /* Applies to all unvisited links */
+    text-decoration:  none;
+    font-weight:      bold;
+    background-color: #ddd;
+    color:            blue;
+    } 
+    .yts-item-link:visited {
+    /* Applies to all visited links */
+    text-decoration:  none;
+    font-weight:      bold;
+    } 
+    .yts-item-link:hover   {
+    /* Applies to links under the pointer */
+    text-decoration:  none;
+    font-weight:      bold;
+    background-color: blue;
+    } 
+    .yts-item-link:active  {
+    /* Applies to activated links */
+    text-decoration:  underline;
+    font-weight:      bold;
+    } 

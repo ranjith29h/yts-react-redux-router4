@@ -9,7 +9,7 @@ const ytsApi = {
 
     movieDetails({ movie_id, artist = false }) {
         let request_url = (artist === true) ? MOVIE_DETAILS_ARTIST : MOVIE_DETAILS;
-        return axios.get(request_url, { params: { movie_id } });
+        return axios.get(request_url, { params: { movie_id,artist } });
     },
 
     movieSuggestion({ movie_id }) {

@@ -10,9 +10,9 @@ export function fetchMovies(data){
     }
 }
 
-export function fetchMovieDetail(id){
+export function fetchMovieDetail(id,artist){
     return {
         type:FETCH_MOVIE_DETAIL,
-        payload:ytsApi.movieDetails({movie_id:id})
+        payload:ytsApi.movieDetails({movie_id:id,artist})
     }
 }

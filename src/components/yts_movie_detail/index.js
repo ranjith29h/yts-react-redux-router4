@@ -3,17 +3,32 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 
 import { fetchMovieDetail } from '../../action';
+import Loading from '../loading';
+import MovieDetialHeader from './movie_detail_header';
+import MovieDetailContainer from './movie_detail_container';
 
 class YtsMovieDetail extends Component{
     
     componentDidMount(){
-        this.props.fetchMovieDetail(this.props.match.params.movieId);
+        let movie_id = this.props.match.params.movieId;
+        this.props.fetchMovieDetail(movie_id,true);
     }
 
     render(){
-        console.log(this.props.movieDetails);
+        if(!this.props.movieDetails.data){
+            return (
+                <div className="main-movie-list">
+                    <Loading />
+                </div>
+            );
+        } else {
+            console.log(this.props.movieDetails);
+        }
         return(
-            <h1>Hello {this.props.match.params.movieId}</h1>
+            <div>
+            <MovieDetialHeader background={this.props.movieDetails.data.movie.background_image_original} />
+            <MovieDetailContainer data={this.props.movieDetails.data.movie}/>
+            </div>
         );
     }
 }

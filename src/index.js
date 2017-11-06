@@ -10,6 +10,9 @@ import { BrowserRouter,Route,Switch } from 'react-router-dom';
 import YtsIndex from './components/yts_index';
 import YtsMovieDetail from './components/yts_movie_detail';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+
 import registerServiceWorker from './registerServiceWorker';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -19,7 +22,7 @@ ReactDOM.render(
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={YtsIndex} />
-                <Route exact path="/:movieId" component={YtsMovieDetail} />
+                <Route exact path="/:moviedSlug/:movieId" component={YtsMovieDetail} />
             </Switch>
         </BrowserRouter>
     </Provider>
