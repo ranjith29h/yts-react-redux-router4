@@ -11,6 +11,7 @@ class YtsMovieDetail extends Component{
     
     componentDidMount(){
         let movie_id = this.props.match.params.movieId;
+        console.log(movie_id);
         this.props.fetchMovieDetail(movie_id,true);
     }
 
@@ -21,9 +22,7 @@ class YtsMovieDetail extends Component{
                     <Loading />
                 </div>
             );
-        } else {
-            console.log(this.props.movieDetails);
-        }
+        } 
         return(
             <div>
             <MovieDetialHeader background={this.props.movieDetails.data.movie.background_image_original} />

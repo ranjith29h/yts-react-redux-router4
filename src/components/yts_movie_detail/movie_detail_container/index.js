@@ -8,6 +8,10 @@ import defaultCast from './profile-placeholder.png';
 
 export default class MovieDetailContainer extends Component {
 
+    componentWillUnmount(){
+        console.log(this.props.data);
+    }
+
     getMinutes(min) {
         let m = min % 60;
         let h = (min - m) / 60;
@@ -35,15 +39,18 @@ export default class MovieDetailContainer extends Component {
                 return (
                     <div key={castItem.imdb_code} className="column">
                         <div className="card cast-card">
+                            <a target="_blank" href={`http://www.imdb.com/name/nm${castItem.imdb_code}/`}>
                             <img src={img} alt={castItem.character_name} />
                             <div className="cast-card-name">
                                 <p>{castItem.name}</p>
                             </div>
+                            </a>
                         </div>
                     </div>
                 );
             });
-            return castTeam;
+            
+        return castTeam;
 
         } else {
             return "Data No Exist";
@@ -80,14 +87,24 @@ export default class MovieDetailContainer extends Component {
                         </div>
                         <div>
                                 <ul className="movie-features">
-                                    <li>
+                                    <li className="download_icon">
                                         <i className="fa fa-download" aria-hidden="true"></i>
+                                        <p>{this.props.data.download_count}</p>
                                     </li>
-                                    <li>
-                                        <i className="fa fa-thumbs-up" aria-hidden="true"></i>
+                                    <li className="like_icon">
+                                        <i className="fa fa-thumbs-up likeUp" aria-hidden="true"></i>
+                                        <p>{this.props.data.like_count}</p>
                                     </li>
-                                    <li>
+                                    <li className="imdb_icon">
+
+                                        <a href={`http://www.imdb.com/title/${this.props.data.imdb_code}`} target="_blank">
                                         <i className="fa fa-imdb" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li className="youtube_icon">
+                                        <a href={`https://www.youtube.com/watch?v=${this.props.data.yt_trailer_code}`} target="_blank">
+                                        <i className="fa fa-youtube-play" aria-hidden="true"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>

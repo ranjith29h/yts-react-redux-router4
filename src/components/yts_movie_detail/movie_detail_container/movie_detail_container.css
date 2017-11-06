@@ -67,15 +67,37 @@
     padding-left:0 !important;
     display: inline-block;
     width: 100%;
+    margin-top: 5%;
 }
 .movie-features li{
     list-style: none;
     display: inline-block;
-    padding: 2%;
-    width: 70px;
+    width: 50%;
+    text-align: center;
+    color: #9E9E9E;
+    font-size: 15px;
+    background-color: #EEEEEE;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .fa{
     text-shadow: 1px 1px 1px #ccc;
     font-size: 2.5em !important;
-    width: 50px;
+    width: 30px;
+    text-shadow: none;
+}
+.download_icon{
+    text-align: center;
+}
+.download_icon i{
+    color: #B0BEC5;
+}
+.likeUp{
+    color: #1E88E5;    
+}
+.imdb_icon i{
+    color:#f8ca17;
+}
+.youtube_icon i{
+    color:#cc181e;
 }
