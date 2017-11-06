@@ -21,7 +21,7 @@ class YtsIndex extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchMovies({ page: this.state.page});
+        this.props.fetchMovies({ page: this.state.page,order_by:'asc'});
         window.addEventListener('scroll', this.callApi);
     }
 
@@ -30,7 +30,7 @@ class YtsIndex extends Component {
             if (this.refs.loadMovies) {
                 this.setState({ page: this.state.page + 1, loadMore: true });
             }
-            this.props.fetchMovies({ page: this.state.page });
+            this.props.fetchMovies({ page: this.state.page,order_by:'asc' });
         }
     }
 
@@ -39,8 +39,6 @@ class YtsIndex extends Component {
     }
 
     render() {
-        console.log(this.props.movieLists);
-
         return (
             <div ref="loadMovies">
                 <ReactCSSTransitionGroup
